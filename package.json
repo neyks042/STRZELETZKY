@@ -1,0 +1,19 @@
+{
+  "name": "niechcemisiejuz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1" , 
+    "start:server:dev": "nodemon server/index.js",
+    "start:PZAWmaj:dev": "npm run dev --prefix PZAWmaj",
+    "start": "concurrently \"npm run start:server:dev\" \"npm run start:PZAWmaj:dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrency": "^0.1.4",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.2"
+  }
+}
