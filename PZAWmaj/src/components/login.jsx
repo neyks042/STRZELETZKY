@@ -1,4 +1,5 @@
 import { useState } from "react";
+import View from "./view";
 
 const Login = () => {
     const [textLogin, setTextLogin]= useState("")
@@ -12,7 +13,7 @@ const Login = () => {
         }
     }
     return(<>
-        {logowanie ? <div>LALALA</div>:<div>
+        {logowanie ? <div><View></View></div>:<div>
     <input type="text" placeholder="login" onChange={e=>{setTextLogin(e.target.value)}}></input>
     <input type="text" placeholder="hasło" onChange={e=>{setTextHaslo(e.target.value)}}></input>
     <input type="button" value="zaloguj" onClick={buttonHandler}></input>
