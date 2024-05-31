@@ -10,6 +10,15 @@ const View = () => {
         setListAll(All)
     }
 
+    const [listOne, setListOne] = useState(null)
+    const [name, setName] = useState("")
+    const oneHandler = async() => {
+        const response = await axios.get(`http://localhost:8000/api/gotham/${name}`)
+        console.log(response.data)
+        let One = response.data
+        setListOne(One)
+    }
+
          
  
 
@@ -26,7 +35,23 @@ const View = () => {
             }
         </table>
 
-
+        <input type="text" placeholder="nazwa osadzonego" onChange={e=>{setName(e.target.value)}}></input>
+        <input type="button" value="pokaż osadzonego" onClick={oneHandler}></input>
+        <table>
+            <tr>
+                <td>main</td>
+                <td>info</td>
+                <td>specinfo</td>
+            </tr>
+            { listOne != null ?
+            <tr>
+                <td>{listOne.main}</td>
+                <td>{listOne.info}</td>
+                <td>{listOne.specinfo}</td>
+            </tr>
+            :null
+        }
+        </table>
     </>
     )
 }
